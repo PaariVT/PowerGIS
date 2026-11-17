@@ -1,8 +1,8 @@
 // ============================================================================
 // POWERGIS ENTERPRISE ELECTRICITY DISTRIBUTION GIS PLATFORM
 // DEDICATED ENTERPRISE LOGIN PAGE - VIBRANT AESTHETIC & PROFESSIONAL PORTAL
-// Modern split-panel command center aesthetic with rich electrical network
-// telemetry highlights, glowing brand identity, and role-colored demo sandbox.
+// Centered colorful sign-in card with integrated PowerGIS branding and
+// role-colored demo sandbox.
 // ============================================================================
 
 import React, { useState } from 'react';
@@ -26,10 +26,8 @@ import {
   AlertTriangle,
   Search,
   ShieldCheck,
-  Activity,
   MapPin,
   Cpu,
-  Radio,
   Sparkles,
   Layers,
   Lock,
@@ -332,7 +330,7 @@ export const LoginPage: React.FC = () => {
   }
 
   return (
-    <div className="pg-login-portal min-h-screen w-full text-slate-900 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative overflow-hidden selection:bg-blue-600 selection:text-white">
+    <div className="pg-login-portal min-h-screen w-full text-slate-900 flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden selection:bg-blue-600 selection:text-white">
       {/* Ambient Glowing Orbs & GIS Grid Overlay */}
       <div className="pg-login-grid-overlay absolute inset-0 pointer-events-none" />
       <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-cyan-500/20 blur-3xl pointer-events-none" />
@@ -342,375 +340,225 @@ export const LoginPage: React.FC = () => {
       {/* View Router */}
       {currentView === 'login' ? (
         /* ====================================================================
-           PAGE 1: COLORFUL & PROFESSIONAL SPLIT-PANEL ENTERPRISE LOGIN PORTAL
+           PAGE 1: CENTERED COLORFUL & PROFESSIONAL ENTERPRISE LOGIN CARD
            ==================================================================== */
-        <div className="relative z-10 w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden shadow-[0_25px_70px_-15px_rgba(0,0,0,0.65)] border border-white/15 bg-slate-900/60 backdrop-blur-xl">
-          {/* LEFT SHOWCASE PANEL: BRANDING, GIS TELEMETRY & INFRASTRUCTURE HIGHLIGHTS */}
-          <div className="lg:col-span-7 relative p-7 sm:p-10 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-slate-900/95 via-blue-950/90 to-indigo-950/95 text-white border-b lg:border-b-0 lg:border-r border-white/10">
-            {/* Decorative Network Topology SVG Background */}
-            <svg
-              className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none"
-              viewBox="0 0 200 200"
-              fill="none"
-            >
-              <circle cx="40" cy="40" r="5" fill="#38BDF8" />
-              <circle cx="120" cy="30" r="6" fill="#F59E0B" />
-              <circle cx="165" cy="95" r="7" fill="#10B981" />
-              <circle cx="85" cy="115" r="6" fill="#818CF8" />
-              <circle cx="45" cy="165" r="5" fill="#F43F5E" />
-              <circle cx="150" cy="165" r="6" fill="#38BDF8" />
-              <path
-                d="M40 40 L120 30 L165 95 L85 115 L40 40 M85 115 L45 165 M85 115 L150 165 M165 95 L150 165"
-                stroke="url(#gridGrad)"
-                strokeWidth="1.5"
-                strokeDasharray="4 4"
-              />
-              <defs>
-                <linearGradient id="gridGrad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#38BDF8" />
-                  <stop offset="0.5" stopColor="#818CF8" />
-                  <stop offset="1" stopColor="#10B981" />
-                </linearGradient>
-              </defs>
-            </svg>
+        <div className="relative z-10 w-full max-w-[460px] rounded-3xl overflow-hidden shadow-[0_25px_70px_-15px_rgba(0,0,0,0.65)] border border-white/20 bg-white p-6 sm:p-8">
+          {/* Vibrant Top Accent Ribbon */}
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-indigo-500 to-emerald-500" />
 
-            <div>
-              {/* Top Brand Row */}
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
-                <div className="flex items-center space-x-3.5">
-                  <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-rose-500 p-[1px] shadow-lg shadow-amber-500/25">
-                    <div className="w-full h-full bg-slate-950/90 rounded-[15px] flex items-center justify-center">
-                      <Zap className="w-5 h-5 text-amber-400 fill-amber-400" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center space-x-2">
-                      <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white via-sky-100 to-cyan-200 bg-clip-text text-transparent">
-                        {LABELS.header.brandName}
-                      </span>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 border border-cyan-400/30">
-                        Enterprise v3.42
-                      </span>
-                    </div>
-                    <p className="text-xs text-slate-300/80 mt-0.5">
-                      Electricity Distribution GIS &amp; SCADA Command Center
-                    </p>
-                  </div>
-                </div>
-
-                <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/25 text-emerald-300 text-[11px] font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Grid Telemetry Online</span>
-                </div>
+          {/* Integrated PowerGIS Branding Header */}
+          <div className="flex items-center justify-between gap-3 mb-6 pb-5 border-b border-slate-200/80 mt-1">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-cyan-500 text-white flex items-center justify-center font-bold text-xs shadow-md shadow-blue-600/25 flex-shrink-0">
+                <Zap className="w-5 h-5 text-amber-300 fill-amber-300" />
               </div>
-
-              {/* Hero Title & Value Proposition */}
-              <div className="mb-7">
-                <div className="inline-flex items-center space-x-1.5 text-xs font-semibold text-sky-300 mb-2.5">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Next-Generation Utility Network Intelligence</span>
+              <div>
+                <div className="flex items-center space-x-2">
+                  <span className="font-extrabold text-lg text-slate-900 tracking-tight">
+                    {LABELS.header.brandName}
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 border border-blue-200">
+                    Enterprise
+                  </span>
                 </div>
-                <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
-                  Unified Geospatial Command for{' '}
-                  <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">
-                    110kV / 22kV / 11kV
-                  </span>{' '}
-                  Power Grids
-                </h1>
-                <p className="text-xs sm:text-sm text-slate-300/90 mt-2.5 leading-relaxed max-w-xl">
-                  {LABELS.auth.loginSubheading} Engineered for real-time PostGIS spatial topology, IEC 60870-5-104 SCADA supervision, and statutory IEEE 1366 reliability governance.
+                <p className="text-[11px] text-slate-500">
+                  {LABELS.header.brandSubtitle}
                 </p>
               </div>
-
-              {/* 4 Colorful Feature Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
-                <div className="p-3.5 rounded-2xl bg-white/[0.05] hover:bg-white/[0.08] border border-sky-400/20 transition-all">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-9 h-9 rounded-xl bg-sky-500/20 border border-sky-400/30 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-4 h-4 text-sky-300" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white">PostGIS Spatial Network Twin</div>
-                      <p className="text-[11px] text-slate-300/80 mt-0.5 leading-snug">
-                        Sub-meter GPS asset registry for substations, feeders, DTRs &amp; poles.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded-2xl bg-white/[0.05] hover:bg-white/[0.08] border border-amber-400/20 transition-all">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center flex-shrink-0">
-                      <Radio className="w-4 h-4 text-amber-300" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white">SCADA &amp; SBO Safety Interlock</div>
-                      <p className="text-[11px] text-slate-300/80 mt-0.5 leading-snug">
-                        Live 3-phase telemetry with Select-Before-Operate PTW verification.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded-2xl bg-white/[0.05] hover:bg-white/[0.08] border border-emerald-400/20 transition-all">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center flex-shrink-0">
-                      <Activity className="w-4 h-4 text-emerald-300" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white">IEEE 1366 &amp; ISO 55000 Risk</div>
-                      <p className="text-[11px] text-slate-300/80 mt-0.5 leading-snug">
-                        Automated SAIFI/SAIDI outage analytics and transformer thermal health.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded-2xl bg-white/[0.05] hover:bg-white/[0.08] border border-violet-400/20 transition-all">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-9 h-9 rounded-xl bg-violet-500/20 border border-violet-400/30 flex items-center justify-center flex-shrink-0">
-                      <ShieldCheck className="w-4 h-4 text-violet-300" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white">Zero-Trust Territorial RLS</div>
-                      <p className="text-[11px] text-slate-300/80 mt-0.5 leading-snug">
-                        Strict Circle, Division, Section &amp; Ward jurisdiction segregation.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Bottom Live Telemetry Metrics Strip */}
-            <div className="pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs">
-              <div className="flex items-center space-x-5">
-                <div>
-                  <div className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Grid Hierarchy</div>
-                  <div className="font-bold text-sky-300 mt-0.5">110 / 22 / 11 kV</div>
-                </div>
-                <div className="h-6 w-[1px] bg-white/10" />
-                <div>
-                  <div className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Protocols</div>
-                  <div className="font-bold text-amber-300 mt-0.5">IEC-104 • Modbus • MQTT</div>
-                </div>
-                <div className="h-6 w-[1px] bg-white/10 hidden sm:block" />
-                <div className="hidden sm:block">
-                  <div className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Compliance</div>
-                  <div className="font-bold text-emerald-300 mt-0.5">JERC • RDSS • ISO 55000</div>
-                </div>
-              </div>
-            </div>
+            {/* Colorful Demo Button */}
+            <button
+              type="button"
+              onClick={() => setCurrentView('demo')}
+              title="Open the PowerGIS demo workspace"
+              aria-label="Open demo workspace"
+              className="inline-flex min-h-9 items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-rose-500/15 hover:from-amber-500/25 hover:to-rose-500/25 text-amber-900 border border-amber-400/50 text-xs font-bold transition-all cursor-pointer flex-shrink-0 shadow-sm"
+            >
+              <Zap className="w-3.5 h-3.5 text-amber-600 fill-amber-500" aria-hidden="true" />
+              <span>Demo</span>
+            </button>
           </div>
 
-          {/* RIGHT PANEL: AUTHENTICATION FORM & QUICK DEMO ACCESS */}
-          <div className="lg:col-span-5 bg-white p-6 sm:p-9 flex flex-col justify-between relative">
-            {/* Vibrant Top Accent Ribbon */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-indigo-500 to-emerald-500" />
+          {/* Sign-In Title */}
+          <div className="mb-5">
+            <span className="inline-flex items-center space-x-1.5 text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 border border-indigo-200/80 px-2.5 py-0.5 rounded-full mb-2">
+              <Lock className="w-3 h-3 text-indigo-600" />
+              <span>Zero-Trust Gateway</span>
+            </span>
+            <h1 className="text-lg font-extrabold text-slate-900 tracking-tight">
+              {LABELS.auth.loginHeading}
+            </h1>
+          </div>
+
+          {/* Backend configuration notice */}
+          {!isSupabaseConfigured && (
+            <div className="mb-5 p-3.5 rounded-xl bg-gradient-to-r from-amber-50 via-orange-50/70 to-amber-50 border border-amber-300/80 text-amber-950 text-xs shadow-xs">
+              <div className="flex items-center justify-between">
+                <span className="font-bold flex items-center space-x-1.5 text-amber-900">
+                  <Cpu className="w-3.5 h-3.5 text-amber-600" />
+                  <span>Backend not configured</span>
+                </span>
+                <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-amber-200/70 text-amber-900">
+                  Simulator Ready
+                </span>
+              </div>
+              <p className="mt-1.5 text-[11px] text-amber-800/90 leading-snug">
+                A deployment administrator must configure the public Supabase URL and publishable key through the deployment environment, then rebuild the application.
+                {isSimulatorRuntimeAllowed()
+                  ? ' Development simulator mode is available in this build.'
+                  : ' Use the Demo Sandbox below to explore simulated utility personas.'}
+              </p>
+            </div>
+          )}
+
+          {error && (
+            <div className="mb-5 p-3.5 rounded-xl bg-rose-50 border border-rose-200 flex items-start space-x-2.5 text-rose-900 text-xs">
+              <AlertTriangle className="w-4 h-4 flex-shrink-0 mt-0.5 text-rose-600" />
+              <div className="flex-1 leading-snug font-medium">{error}</div>
+            </div>
+          )}
+
+          {/* Official Credentials Form */}
+          <form onSubmit={handleSubmit} noValidate className="space-y-4">
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                {LABELS.auth.emailLabel}
+              </label>
+              <div className="relative">
+                <Mail className="w-4 h-4 text-blue-600 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <input
+                  type="email"
+                  autoComplete="email"
+                  value={identifier}
+                  onChange={e => handleIdentifierChange(e.target.value)}
+                  onBlur={() => {
+                    setIdentifierTouched(true);
+                    setIdentifierError(validateEmail(identifier));
+                  }}
+                  placeholder={LABELS.auth.emailPlaceholder}
+                  className={`w-full bg-slate-50/70 focus:bg-white border rounded-xl pl-10 pr-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none transition-all ${
+                    identifierError && identifierTouched
+                      ? 'border-rose-400 bg-rose-50/30'
+                      : 'border-slate-200 hover:border-blue-300'
+                  }`}
+                />
+              </div>
+              {identifierError && identifierTouched && (
+                <p className="text-[11px] text-rose-600 font-medium mt-1 flex items-center space-x-1">
+                  <span>{identifierError}</span>
+                </p>
+              )}
+            </div>
 
             <div>
-              {/* Header & Demo Switcher */}
-              <div className="flex items-start justify-between gap-3 mb-6">
-                <div>
-                  <span className="inline-flex items-center space-x-1.5 text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200/80 px-2.5 py-0.5 rounded-full mb-2">
-                    <Lock className="w-3 h-3 text-blue-600" />
-                    <span>Zero-Trust Gateway</span>
-                  </span>
-                  <h2 className="text-xl font-extrabold text-slate-900 tracking-tight">
-                    {LABELS.auth.loginHeading}
-                  </h2>
-                  <p className="text-xs text-slate-500 mt-0.5">
-                    Sign in with your official utility credentials
-                  </p>
-                </div>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-xs font-bold text-slate-700">
+                  {LABELS.auth.passwordLabel}
+                </label>
+                <button
+                  type="button"
+                  onClick={handleOpenForgotModal}
+                  className="text-xs font-semibold text-blue-600 hover:text-indigo-700 underline transition-colors cursor-pointer"
+                >
+                  {LABELS.auth.forgotPassword}
+                </button>
+              </div>
+              <div className="relative">
+                <KeyRound className="w-4 h-4 text-indigo-600 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  autoComplete="current-password"
+                  value={password}
+                  onChange={e => handlePasswordChange(e.target.value)}
+                  onBlur={() => {
+                    setPasswordTouched(true);
+                    setPasswordError(!password ? 'Password is required.' : null);
+                  }}
+                  placeholder={LABELS.auth.passwordPlaceholder}
+                  className={`w-full bg-slate-50/70 focus:bg-white border rounded-xl pl-10 pr-10 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none transition-all ${
+                    passwordError && passwordTouched
+                      ? 'border-rose-400 bg-rose-50/30'
+                      : 'border-slate-200 hover:border-blue-300'
+                  }`}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-blue-600 cursor-pointer"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
+              </div>
 
-                {/* Colorful Demo Button */}
+              {passwordError && passwordTouched && (
+                <p className="text-[11px] text-rose-600 font-medium mt-1 flex items-center space-x-1">
+                  <span>{passwordError}</span>
+                </p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-500 text-white font-bold text-xs flex items-center justify-center space-x-2 transition-all shadow-lg shadow-blue-600/25 disabled:opacity-50 mt-2 cursor-pointer"
+            >
+              {isLoading ? (
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              ) : (
+                <>
+                  <span>Enter Operations Workspace</span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </>
+              )}
+            </button>
+          </form>
+
+          {/* Interactive Quick Simulation Sandbox Launchpad */}
+          <div className="mt-6 pt-5 border-t border-slate-200/80">
+            <div className="p-4 rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white border border-indigo-500/30 shadow-md">
+              <div className="flex items-center justify-between gap-2 mb-3">
+                <div className="flex items-center space-x-2">
+                  <span className="w-6 h-6 rounded-lg bg-amber-400/20 border border-amber-400/40 flex items-center justify-center">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                  </span>
+                  <span className="text-xs font-bold text-white">1-Click Role Simulator</span>
+                </div>
                 <button
                   type="button"
                   onClick={() => setCurrentView('demo')}
-                  title="Open the PowerGIS demo workspace"
-                  aria-label="Open demo workspace"
-                  className="inline-flex min-h-9 items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-rose-500/15 hover:from-amber-500/25 hover:to-rose-500/25 text-amber-900 border border-amber-400/50 text-xs font-bold transition-all cursor-pointer flex-shrink-0 shadow-sm"
+                  className="text-[11px] font-bold text-cyan-300 hover:text-cyan-200 inline-flex items-center space-x-1 cursor-pointer"
                 >
-                  <Zap className="w-3.5 h-3.5 text-amber-600 fill-amber-500" aria-hidden="true" />
-                  <span>Demo Sandbox</span>
+                  <span>All {initialUsers.length} Personas</span>
+                  <ArrowRight className="w-3 h-3 text-cyan-300" />
                 </button>
               </div>
 
-              {/* Backend configuration notice */}
-              {!isSupabaseConfigured && (
-                <div className="mb-5 p-3.5 rounded-xl bg-gradient-to-r from-amber-50 via-orange-50/70 to-amber-50 border border-amber-300/80 text-amber-950 text-xs shadow-xs">
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold flex items-center space-x-1.5 text-amber-900">
-                      <Cpu className="w-3.5 h-3.5 text-amber-600" />
-                      <span>Backend not configured</span>
-                    </span>
-                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-amber-200/70 text-amber-900">
-                      Simulator Ready
-                    </span>
-                  </div>
-                  <p className="mt-1.5 text-[11px] text-amber-800/90 leading-snug">
-                    A deployment administrator must configure the public Supabase URL and publishable key through the deployment environment, then rebuild the application.
-                    {isSimulatorRuntimeAllowed()
-                      ? ' Development simulator mode is available in this build.'
-                      : ' Use the Demo Sandbox below to explore simulated utility personas.'}
-                  </p>
-                </div>
-              )}
-
-              {error && (
-                <div className="mb-5 p-3.5 rounded-xl bg-rose-50 border border-rose-200 flex items-start space-x-2.5 text-rose-900 text-xs">
-                  <AlertTriangle className="w-4 h-4 flex-shrink-0 mt-0.5 text-rose-600" />
-                  <div className="flex-1 leading-snug font-medium">{error}</div>
-                </div>
-              )}
-
-              {/* Official Credentials Form */}
-              <form onSubmit={handleSubmit} noValidate className="space-y-4">
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                    {LABELS.auth.emailLabel}
-                  </label>
-                  <div className="relative">
-                    <Mail className="w-4 h-4 text-blue-600 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                    <input
-                      type="email"
-                      autoComplete="email"
-                      value={identifier}
-                      onChange={e => handleIdentifierChange(e.target.value)}
-                      onBlur={() => {
-                        setIdentifierTouched(true);
-                        setIdentifierError(validateEmail(identifier));
-                      }}
-                      placeholder={LABELS.auth.emailPlaceholder}
-                      className={`w-full bg-slate-50/70 focus:bg-white border rounded-xl pl-10 pr-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none transition-all ${
-                        identifierError && identifierTouched
-                          ? 'border-rose-400 bg-rose-50/30'
-                          : 'border-slate-200 hover:border-blue-300'
-                      }`}
-                    />
-                  </div>
-                  {identifierError && identifierTouched && (
-                    <p className="text-[11px] text-rose-600 font-medium mt-1 flex items-center space-x-1">
-                      <span>{identifierError}</span>
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <label className="text-xs font-bold text-slate-700">
-                      {LABELS.auth.passwordLabel}
-                    </label>
+              <div className="grid grid-cols-2 gap-2">
+                {quickPersonas.map(u => {
+                  const palette = getRolePalette(u.role);
+                  return (
                     <button
+                      key={u.id}
                       type="button"
-                      onClick={handleOpenForgotModal}
-                      className="text-xs font-semibold text-blue-600 hover:text-indigo-700 underline transition-colors cursor-pointer"
+                      onClick={() => handleOneClickLogin(u)}
+                      disabled={isLoading}
+                      className="text-left p-2 rounded-xl bg-white/[0.06] hover:bg-white/[0.14] border border-white/10 hover:border-cyan-400/40 transition-all flex items-center justify-between group cursor-pointer"
+                      title={`1-Click Sign In as ${u.fullName} (${u.designation})`}
                     >
-                      {LABELS.auth.forgotPassword}
-                    </button>
-                  </div>
-                  <div className="relative">
-                    <KeyRound className="w-4 h-4 text-indigo-600 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                    <input
-                      type={showPassword ? 'text' : 'password'}
-                      autoComplete="current-password"
-                      value={password}
-                      onChange={e => handlePasswordChange(e.target.value)}
-                      onBlur={() => {
-                        setPasswordTouched(true);
-                        setPasswordError(!password ? 'Password is required.' : null);
-                      }}
-                      placeholder={LABELS.auth.passwordPlaceholder}
-                      className={`w-full bg-slate-50/70 focus:bg-white border rounded-xl pl-10 pr-10 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none transition-all ${
-                        passwordError && passwordTouched
-                          ? 'border-rose-400 bg-rose-50/30'
-                          : 'border-slate-200 hover:border-blue-300'
-                      }`}
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-blue-600 cursor-pointer"
-                      aria-label={showPassword ? 'Hide password' : 'Show password'}
-                    >
-                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                    </button>
-                  </div>
-
-                  {passwordError && passwordTouched && (
-                    <p className="text-[11px] text-rose-600 font-medium mt-1 flex items-center space-x-1">
-                      <span>{passwordError}</span>
-                    </p>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-500 text-white font-bold text-xs flex items-center justify-center space-x-2 transition-all shadow-lg shadow-blue-600/25 disabled:opacity-50 mt-2 cursor-pointer"
-                >
-                  {isLoading ? (
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  ) : (
-                    <>
-                      <span>Enter Operations Workspace</span>
-                      <ArrowRight className="w-4 h-4 text-white" />
-                    </>
-                  )}
-                </button>
-              </form>
-            </div>
-
-            {/* Interactive Quick Simulation Sandbox Launchpad */}
-            <div className="mt-6 pt-5 border-t border-slate-200/80">
-              <div className="p-4 rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white border border-indigo-500/30 shadow-md">
-                <div className="flex items-center justify-between gap-2 mb-2.5">
-                  <div className="flex items-center space-x-2">
-                    <span className="w-6 h-6 rounded-lg bg-amber-400/20 border border-amber-400/40 flex items-center justify-center">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                    </span>
-                    <span className="text-xs font-bold text-white">1-Click Role Simulator</span>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setCurrentView('demo')}
-                    className="text-[11px] font-bold text-cyan-300 hover:text-cyan-200 inline-flex items-center space-x-1 cursor-pointer"
-                  >
-                    <span>All {initialUsers.length} Personas</span>
-                    <ArrowRight className="w-3 h-3 text-cyan-300" />
-                  </button>
-                </div>
-
-                <p className="text-[11px] text-slate-300 mb-3 leading-snug">
-                  Instant zero-password preview across Puducherry &amp; Karaikal utility jurisdictions:
-                </p>
-
-                <div className="grid grid-cols-2 gap-2">
-                  {quickPersonas.map(u => {
-                    const palette = getRolePalette(u.role);
-                    return (
-                      <button
-                        key={u.id}
-                        type="button"
-                        onClick={() => handleOneClickLogin(u)}
-                        disabled={isLoading}
-                        className="text-left p-2 rounded-xl bg-white/[0.06] hover:bg-white/[0.14] border border-white/10 hover:border-cyan-400/40 transition-all flex items-center justify-between group cursor-pointer"
-                        title={`1-Click Sign In as ${u.fullName} (${u.designation})`}
-                      >
-                        <div className="min-w-0 pr-1">
-                          <div className={`text-[10px] font-extrabold uppercase ${palette.badgeText}`}>
-                            {u.role.replace('_', ' ')}
-                          </div>
-                          <div className="text-[11px] font-semibold text-white truncate">
-                            {u.fullName}
-                          </div>
+                      <div className="min-w-0 pr-1">
+                        <div className={`text-[10px] font-extrabold uppercase ${palette.badgeText}`}>
+                          {u.role.replace('_', ' ')}
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
-                      </button>
-                    );
-                  })}
-                </div>
+                        <div className="text-[11px] font-semibold text-white truncate">
+                          {u.fullName}
+                        </div>
+                      </div>
+                      <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
