@@ -1,26 +1,32 @@
 /**
- * PowerGIS UI color tokens.
- *
- * Non-GIS application UI uses neutral tones only. GIS Master Map owns its
- * operational colors locally inside the GIS components and map configuration.
+ * PowerGIS enterprise design tokens.
+ * A restrained navy/blue foundation with teal operational accents and clear status colours.
  */
 export const COLORS = {
-  canvas: '#FAFAFA',
+  canvas: '#F3F6FB',
   surface: '#FFFFFF',
-  surfaceSubtle: '#F4F4F4',
-  surfaceMuted: '#E4E4E4',
-  text: '#090909',
-  textSecondary: '#535353',
-  textMuted: '#727272',
-  textDisabled: '#A2A2A2',
+  surfaceSubtle: '#F7F9FC',
+  surfaceMuted: '#EAF0F7',
+  text: '#14213D',
+  textSecondary: '#52627A',
+  textMuted: '#718096',
+  textDisabled: '#A0AEC0',
   textInverse: '#FFFFFF',
-  border: '#E4E4E4',
-  borderStrong: '#A2A2A2',
-  divider: '#F4F4F4',
-  control: '#272727',
-  controlHover: '#181818',
-  focus: '#535353',
-  shadow: 'rgba(0, 0, 0, 0.06)',
+  border: '#E2E8F0',
+  borderStrong: '#CBD5E1',
+  divider: '#EDF2F7',
+  control: '#2563EB',
+  controlHover: '#1D4ED8',
+  focus: '#60A5FA',
+  shadow: 'rgba(15, 23, 42, 0.08)',
+  navy: '#14213D',
+  blue: '#2563EB',
+  cyan: '#0891B2',
+  teal: '#0F9D8A',
+  green: '#16A34A',
+  amber: '#D97706',
+  red: '#DC2626',
+  violet: '#7C3AED',
 } as const;
 
 export type Colors = typeof COLORS;

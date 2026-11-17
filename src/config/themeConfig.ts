@@ -6,14 +6,14 @@ import { THEME } from '../commons/theme';
 
 export const THEME_CONFIG = {
   gradients: {
-    primary: 'from-neutral-700 to-neutral-700',
-    primaryHover: 'from-neutral-800 to-neutral-800',
-    emblem: 'from-neutral-700 via-neutral-700 to-neutral-600',
-    accent: 'from-neutral-600 to-neutral-700',
-    success: 'from-neutral-600 to-neutral-700',
-    warning: 'from-neutral-600 to-neutral-600',
-    danger: 'from-neutral-600 to-neutral-700',
-    purple: 'from-neutral-700 to-neutral-700',
+    primary: 'from-blue-600 to-cyan-600',
+    primaryHover: 'from-blue-700 to-cyan-700',
+    emblem: 'from-blue-700 via-indigo-600 to-cyan-500',
+    accent: 'from-cyan-500 to-teal-500',
+    success: 'from-emerald-500 to-teal-600',
+    warning: 'from-amber-400 to-orange-500',
+    danger: 'from-rose-500 to-red-600',
+    purple: 'from-violet-600 to-indigo-600',
   },
   colors: {
     electricBlue: COLORS.control,

@@ -5,20 +5,11 @@ import { FONTS } from './fonts';
 export const UI = {
   colors: COLORS,
   fonts: FONTS,
-  radius: {
-    sm: '0.25rem',
-    md: '0.375rem',
-  },
-  spacing: {
-    page: '1rem',
-    section: '1.25rem',
-  },
-  focusRing: `0 0 0 3px ${COLORS.surfaceMuted}`,
-  shadow: `0 1px 3px 0 ${COLORS.shadow}`,
-  table: {
-    headerHeight: '2.5rem',
-    rowHeight: '2.75rem',
-  },
+  radius: { sm: '0.5rem', md: '0.75rem', lg: '1rem', xl: '1.25rem' },
+  spacing: { page: '1.25rem', section: '1.5rem' },
+  focusRing: `0 0 0 3px rgba(96, 165, 250, 0.28)`,
+  shadow: `0 8px 24px ${COLORS.shadow}`,
+  table: { headerHeight: '2.75rem', rowHeight: '3rem' },
 } as const;
 
 export type UIConfig = typeof UI;

@@ -191,8 +191,8 @@ export const LoginPage: React.FC = () => {
 
   // 1-Click Login from Demo Sandbox: sets simulator mode ON and logs in immediately
   const handleOneClickLogin = (u: UserProfile) => {
-    const allowDemo = true; // Temporarily allow demo personas in production
-    if ((!isSimulatorRuntimeAllowed() || isSupabaseConfigured) && !allowDemo) {
+    const allowDemo = isSimulatorRuntimeAllowed() && !isSupabaseConfigured;
+    if (!allowDemo) {
       setError('Demo sign-in is available only in development builds without a configured production backend. Use your authorized PowerGIS account to sign in.');
       setCurrentView('login');
       return;
@@ -338,7 +338,7 @@ export const LoginPage: React.FC = () => {
       <div className="absolute -bottom-32 left-1/3 w-96 h-96 rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
 
       {/* View Router */}
-      {currentView === 'login' ? (
+      {currentView === 'login' || !isSimulatorRuntimeAllowed() || isSupabaseConfigured ? (
         /* ====================================================================
            PAGE 1: CENTERED COLORFUL & PROFESSIONAL ENTERPRISE LOGIN CARD
            ==================================================================== */
@@ -367,8 +367,8 @@ export const LoginPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Colorful Demo Button */}
-            <button
+            {/* Development-only demo entry point */}
+            {isSimulatorRuntimeAllowed() && !isSupabaseConfigured && <button
               type="button"
               onClick={() => setCurrentView('demo')}
               title="Open the PowerGIS demo workspace"
@@ -377,7 +377,7 @@ export const LoginPage: React.FC = () => {
             >
               <Zap className="w-3.5 h-3.5 text-amber-600 fill-amber-500" aria-hidden="true" />
               <span>Demo</span>
-            </button>
+            </button>}
           </div>
 
           {/* Sign-In Title */}
@@ -400,14 +400,14 @@ export const LoginPage: React.FC = () => {
                   <span>Backend not configured</span>
                 </span>
                 <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-amber-200/70 text-amber-900">
-                  Simulator Ready
+                  {isSimulatorRuntimeAllowed() ? 'Development Simulator' : 'Backend Required'}
                 </span>
               </div>
               <p className="mt-1.5 text-[11px] text-amber-800/90 leading-snug">
                 A deployment administrator must configure the public Supabase URL and publishable key through the deployment environment, then rebuild the application.
                 {isSimulatorRuntimeAllowed()
                   ? ' Development simulator mode is available in this build.'
-                  : ' Use the Demo Sandbox below to explore simulated utility personas.'}
+                  : ' Demo identities are disabled in production. Configure the backend before deployment.'}
               </p>
             </div>
           )}
@@ -515,8 +515,8 @@ export const LoginPage: React.FC = () => {
             </button>
           </form>
 
-          {/* Interactive Quick Simulation Sandbox Launchpad */}
-          <div className="mt-6 pt-5 border-t border-slate-200/80">
+          {/* Development-only simulator launchpad */}
+          {isSimulatorRuntimeAllowed() && !isSupabaseConfigured && <div className="mt-6 pt-5 border-t border-slate-200/80">
             <div className="p-4 rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white border border-indigo-500/30 shadow-md">
               <div className="flex items-center justify-between gap-2 mb-3">
                 <div className="flex items-center space-x-2">
@@ -561,7 +561,7 @@ export const LoginPage: React.FC = () => {
                 })}
               </div>
             </div>
-          </div>
+          </div>}
         </div>
       ) : (
         /* ====================================================================

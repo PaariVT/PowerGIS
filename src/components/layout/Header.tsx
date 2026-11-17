@@ -13,6 +13,7 @@ import { NavTabId } from '../../config/navigationConfig';
 import { ConnectionStatus } from '../common/ConnectionStatus';
 import { LABELS } from '../../config/labelsConfig';
 import { isSupabaseConfigured } from '../../lib/supabase';
+import { isSimulatorRuntimeAllowed } from '../../repositories/repositoryFactory';
 import {
  Search, Bell, Globe, ChevronDown, LogOut, Menu, X, ShieldCheck, Settings, Zap
 } from 'lucide-react';
@@ -121,8 +122,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleMobileMenu, onNavigateTa
  <Search className="w-3.5 h-3.5 text-neutral-400 absolute left-2.5 pointer-events-none flex-shrink-0" />
  <input
  ref={searchInputRef}
- onFocus={() => onOpenCommandPalette?.()}
- type="text"
+  type="text"
  value={searchQuery}
  onChange={handleSearch}
  placeholder={LABELS.header.searchPlaceholder}
@@ -223,7 +223,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleMobileMenu, onNavigateTa
  </div>
 
  {/* Master Grid & SCADA Simulator Mode Toggle */}
- {!isSupabaseConfigured && <button
+ {isSimulatorRuntimeAllowed() && !isSupabaseConfigured && <button
  onClick={handleToggleSimulator}
  title={
  isSimulatorActive

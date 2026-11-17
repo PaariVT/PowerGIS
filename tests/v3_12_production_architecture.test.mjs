@@ -15,7 +15,7 @@ assert.match(factory, /RUNTIME_CONFIG\.isDevelopment/);
 assert.match(read('src/config/runtimeConfig.ts'), /environment\.DEV === true/);
 const auth = read('src/context/AuthContext.tsx');
 assert.match(auth, /Password sign-in is unavailable in simulator mode/);
-assert.match(auth, /if \(!isDev \|\| isSupabaseConfigured\) return \{ success: false, error: 'Demo persona login is available only in development builds without a configured production backend\.'/);
+assert.match(auth, /if \(!isSimulatorRuntimeAllowed\(\) \|\| isSupabaseConfigured\)/);
 const assets = read('src/services/assetService.ts');
 assert.match(assets, /isSupabaseConfigured\) && active/);
 assert.match(assets, /assetCatalogRepository\.loadAll\(\)/);

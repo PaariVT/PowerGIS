@@ -57,11 +57,11 @@ export interface NavCategoryConfig {
 }
 
 export const NAVIGATION_CATEGORIES: NavCategoryConfig[] = [
- { name: 'Core Operations', shortLabel: 'Core', badge: 'LIVE', accentColor: 'text-neutral-600 bg-neutral-50 border-neutral-200' },
- { name: 'Network & Assets', shortLabel: 'Assets', badge: 'INFRA', accentColor: 'text-neutral-600 bg-neutral-50 border-neutral-200' },
- { name: 'Field & Maintenance', shortLabel: 'Field Ops', badge: 'OPS', accentColor: 'text-neutral-600 bg-neutral-50 border-neutral-200' },
- { name: 'Surveys & Projects', shortLabel: 'Projects', badge: 'RDSS', accentColor: 'text-neutral-600 bg-neutral-50 border-neutral-200' },
- { name: 'Governance & Security', shortLabel: 'Security', badge: 'RLS', accentColor: 'text-neutral-600 bg-neutral-50 border-neutral-200' },
+ { name: 'Core Operations', shortLabel: 'Core', badge: 'LIVE', accentColor: 'text-blue-700 bg-blue-50 border-blue-200' },
+ { name: 'Network & Assets', shortLabel: 'Assets', badge: 'INFRA', accentColor: 'text-cyan-700 bg-cyan-50 border-cyan-200' },
+ { name: 'Field & Maintenance', shortLabel: 'Field Ops', badge: 'OPS', accentColor: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
+ { name: 'Surveys & Projects', shortLabel: 'Projects', badge: 'RDSS', accentColor: 'text-violet-700 bg-violet-50 border-violet-200' },
+ { name: 'Governance & Security', shortLabel: 'Security', badge: 'RLS', accentColor: 'text-amber-700 bg-amber-50 border-amber-200' },
 ];
 
 export interface NavItemConfig {

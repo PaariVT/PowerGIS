@@ -38,7 +38,7 @@ assert(auth.includes('resetPasswordForEmail'), 'Supabase password recovery is no
 const authContext = read('src/context/AuthContext.tsx');
 assert(authContext.includes('Password sign-in is unavailable in simulator mode'), 'Simulator mode must not authenticate by email/username without password verification');
 assert(authContext.includes('loginAsPersona'), 'Development persona login must remain an explicit separate flow');
-assert(authContext.includes('!isDev || isSupabaseConfigured'), 'Demo persona login must remain blocked outside development or when Supabase is configured');
+assert(authContext.includes('if (!isSimulatorRuntimeAllowed() || isSupabaseConfigured)'), 'Demo persona login must remain blocked outside development or when Supabase is configured');
 
 const faultPage = read('src/components/faults/FaultList.tsx');
 assert(!faultPage.includes('11.9265') && !faultPage.includes('79.8225'), 'Fault page still contains fixed default Puducherry coordinates');

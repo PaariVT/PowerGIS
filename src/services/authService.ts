@@ -9,6 +9,7 @@
 import { UserProfile, OfficialRole, RolePermission } from '../types/auth';
 import { initialUsers } from '../data/simulatorData';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
+import { isSimulatorRuntimeAllowed } from '../repositories/repositoryFactory';
 
 const SESSION_KEY = 'powergis_active_user_session';
 const AUTH_STATUS_KEY = 'powergis_auth_status';
@@ -33,11 +34,13 @@ export class AuthService {
  try {
  if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
  const storedSim = localStorage.getItem('powergis_simulator_mode');
- if (storedSim === 'true') {
+ if (storedSim === 'true' && isSimulatorRuntimeAllowed() && !isSupabaseConfigured) {
  this.isSimulatorActive = true;
+ } else if (storedSim === 'true') {
+ localStorage.removeItem('powergis_simulator_mode');
  }
  window.addEventListener('powergis:simulator-toggled', (e: any) => {
- this.isSimulatorActive = Boolean(e?.detail?.active);
+ this.isSimulatorActive = Boolean(e?.detail?.active && isSimulatorRuntimeAllowed() && !isSupabaseConfigured);
  });
 
  // Browser storage is not proof of identity; restore only from Supabase Auth.
@@ -56,7 +59,7 @@ export class AuthService {
  }
 
  public setSimulatorMode(active: boolean): void {
- this.isSimulatorActive = active;
+ this.isSimulatorActive = Boolean(active && isSimulatorRuntimeAllowed() && !isSupabaseConfigured);
  }
 
  public async loadSupabaseProfile(authUserId: string): Promise<UserProfile | null> {
@@ -354,10 +357,11 @@ export class AuthService {
  };
  case 'auditor':
  default:
+ // Unknown runtime role values receive the least-privileged read-only profile.
  return {
  canViewAssets: true, canEditAssets: false, canReportFault: false, canAssignFault: false,
  canVerifySurvey: false, canApproveSurvey: false, canSubmitSurvey: false, canIssuePTW: false,
- canManageUsers: false, canConfigureSystem: false, canExportData: true,
+ canManageUsers: false, canConfigureSystem: false, canExportData: false,
  };
  }
  }

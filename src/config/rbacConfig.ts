@@ -211,5 +211,6 @@ export const ROLES_REGISTRY: Record<string, RoleDefinition> = {
 };
 
 export const getRoleDefinition = (role: string): RoleDefinition => {
- return ROLES_REGISTRY[role] || ROLES_REGISTRY.super_admin;
+ // Unknown or malformed role values must fail closed, never inherit administrator privileges.
+ return ROLES_REGISTRY[role] || ROLES_REGISTRY.auditor;
 };

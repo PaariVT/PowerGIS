@@ -121,9 +121,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const loginAsPersona = (userId: string): LoginResult => {
-    const isDev = true; // Temporarily allow demo personas in production
-    const isSupabaseConfigured = false;
-    if (!isDev || isSupabaseConfigured) return { success: false, error: 'Demo persona login is available only in development builds without a configured production backend.' };
+    // Demo identities are strictly limited to development builds without a live backend.
+    if (!isSimulatorRuntimeAllowed() || isSupabaseConfigured) {
+      return { success: false, error: 'Demo persona login is available only in development builds without a configured production backend.' };
+    }
     const target = initialUsers.find(u => u.id === userId);
     if (target) {
       assetService.setSimulatorMode(true);
@@ -137,10 +138,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const switchUser = (userId: string) => {
-    const isDev = true; // Temporarily allow demo personas in production
-    const isSupabaseConfigured = false;
-    if (!isDev || isSupabaseConfigured) return;
-    const all = isSupabaseConfigured ? users : authService.getAllUsers();
+    // Never allow client-side identity switching in production or with a live backend.
+    if (!isSimulatorRuntimeAllowed() || isSupabaseConfigured) return;
+    const all = authService.getAllUsers();
     const target = all.find(u => u.id === userId);
     if (target) {
       authService.setCurrentUser(target);
