@@ -1,0 +1,18 @@
+node_modules/
+.DS_Store
+*.local
+.env
+
+# Local environment and credentials
+.env*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated build/test output
+dist/
+coverage/
+*.tsbuildinfo
+*.zip
