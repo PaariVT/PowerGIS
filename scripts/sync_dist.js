@@ -70,10 +70,11 @@ if (fs.existsSync('dist/powergis-sw.js')) fs.copyFileSync('dist/powergis-sw.js',
 // This fixes GitHub Pages when configured to deploy from 'master' branch / (root)
 fs.writeFileSync('index.html', distHtml, 'utf8');
 
-// 3. Generate 404.html and login.html entrypoints across all targets
+// 3. Generate 404.html, login.html, and .nojekyll entrypoints across all targets
 ['dist', 'docs', 'portal', '.'].forEach(dir => {
   fs.writeFileSync(path.join(dir, '404.html'), distHtml, 'utf8');
   fs.writeFileSync(path.join(dir, 'login.html'), distHtml, 'utf8');
+  fs.writeFileSync(path.join(dir, '.nojekyll'), '', 'utf8');
 });
 
 console.log('✓ Successfully synchronized production bundle to root index.html, docs/, portal/, assets/, 404.html and login.html');
